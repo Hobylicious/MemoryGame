@@ -17,29 +17,31 @@
         <button class="resetGame">Reset Game</button>
         <button class="endGame">End Game</button>
     </div>
-    <br></br>
-    <div class="scoreBoard" style="position:fixed; left:1250px; top:225px">
-        0
+
+    <div class="row">
+        <div class="card green hiding" onclick="cardClicked(event)"></div>
+        <div class="card blue hiding" onclick="cardClicked(event)"></div>
+        <div class="card pink hiding" onclick="cardClicked(event)"></div>
+        <div class="card purple hiding" onclick="cardClicked(event)"></div>
     </div>
-    <div class='gameBoard'>
-        <div class='boardSpot' id="spot0"> </div>
-        <div class='boardSpot' id="spot1"> </div>
-        <div class='boardSpot' id="spot2"> </div>
-        <div class='boardSpot' id="spot3"> </div>
-        <div class='boardSpot' id="spot4"> </div>
-        <div class='boardSpot' id="spot5"> </div>
-        <div class='boardSpot' id="spot6"> </div>
-        <div class='boardSpot' id="spot7"> </div>
-        <div class='boardSpot' id="spot8"> </div>
-        <div class='boardSpot' id="spot9"> </div>
-        <div class='boardSpot' id="spot10"> </div>
-        <div class='boardSpot' id="spot11"> </div>
-        <div class='boardSpot' id="spot12"> </div>
-        <div class='boardSpot' id="spot13"> </div>
-        <div class='boardSpot' id="spot14"> </div>
-        <div class='boardSpot' id="spot15"> </div>
+    <div class="row">
+        <div class="card green hiding" onclick="cardClicked(event)"></div>
+        <div class="card blue hiding" onclick="cardClicked(event)"></div>
+        <div class="card pink hiding" onclick="cardClicked(event)"></div>
+        <div class="card purple hiding" onclick="cardClicked(event)"></div>
     </div>
-    <div class="graveYard" style="position:fixed; left:1250px; top:525px">Matched Pairs</div>
+    <div class="row">
+        <div class="card red hiding" onclick="cardClicked(event)"></div>
+        <div class="card orange hiding" onclick="cardClicked(event)"></div>
+        <div class="card black hiding" onclick="cardClicked(event)"></div>
+        <div class="card teal hiding" onclick="cardClicked(event)"></div>
+    </div>
+    <div class="row">
+        <div class="card red hiding" onclick="cardClicked(event)"></div>
+        <div class="card orange hiding" onclick="cardClicked(event)"></div>
+        <div class="card black hiding" onclick="cardClicked(event)"></div>
+        <div class="card teal hiding" onclick="cardClicked(event)"></div>
+    </div>
 
 
 
@@ -47,5 +49,3 @@
 </body>
 
 </html>
-
-

@@ -1,40 +1,53 @@
-.gameBoard{
-    border: 5px solid black;
-    height: 1000px;
-    width: 1000px;
-    display: grid;
-    grid-template-columns: 250px 250px 250px 250px;
-    background-color: blue;
-}
-
-.boardSpot{
-    border: 2px solid black;
-    display: grid;
-    grid-gap: 5px;
-    /* grid-row-start: ;
-    grid-row-end: ; */
-}
-.boardSpot:hover{
-    border: 2px solid black;
-    display: grid;
-    grid-gap: 5px;
-    background-color: orange;
-}
-.scoreBoard{
-    border: 3px solid black;
-    height: 50px;
-    width: 150px;
-    font-size: 50px;
-    text-align: right;
-}
-.graveYard{
-    display: flex;
-    justify-content: center;
-    height: 250px;
-    width: 250px;
-    border: 3px solid black;
+body{
+    text-align: center;
 }
 .buttons{
     font-size: 50px;
     display: inline;
+}
+
+.row{
+    text-align: center;
+
+}
+
+.card {
+display: inline-block;
+background-color: grey;
+height: 250px;
+width: 250px;
+cursor: pointer;
+}
+
+.card:hover{
+    box-shadow: inset 0px 0px 0px 5px red;
+    box-sizing: border-box;
+}
+
+.green{
+    background-color: green;
+}
+.purple{
+    background-color: purple;
+}
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}
+.orange{
+    background-color: orange;
+}
+.black{
+    background-color: black;
+}
+.teal{
+    background-color: teal;
+}
+.pink{
+    background-color: pink;
+}
+.hiding{
+    background-color: grey;
 }
