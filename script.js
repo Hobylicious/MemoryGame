@@ -1,23 +1,28 @@
+let replay = document.querySelectorAll('.newGame')
 let score = 0;
-let scoreBoard = document.getElementsByClassName('.scoreBoard');
+let scoreBoard = document.querySelector('.scoreBoard');
 const colors = ['green', 'blue', 'pink', 'purple', 'red', 'orange', 'black', 'teal']
 const cards = [...document.querySelectorAll('.card')];
 
 
 //color randomizer, help was acquired from friend currently working as fullstack dev
-for (let color of colors) {
-    const cardAIndex = parseInt(Math.random() * cards.length);
-    const cardA = cards[cardAIndex];
-    cards.splice(cardAIndex, 1);
-    cardA.className += `${color}`;
-    cardA.setAttribute('data-color', color);
+function newGame() {
+    for (let color of colors) {
+        const cardAIndex = parseInt(Math.random() * cards.length);
+        const cardA = cards[cardAIndex];
+        cards.splice(cardAIndex, 1);
+        cardA.className += `${color}`;
+        cardA.setAttribute('data-color', color);
 
-    const cardBIndex = parseInt(Math.random() * cards.length);
-    const cardB = cards[cardBIndex];
-    cards.splice(cardBIndex, 1);
-    cardB.className += `${color}`;
-    cardB.setAttribute('data-color', color);
-}
+        const cardBIndex = parseInt(Math.random() * cards.length);
+        const cardB = cards[cardBIndex];
+        cards.splice(cardBIndex, 1);
+        cardB.className += `${color}`;
+        cardB.setAttribute('data-color', color);
+    };
+};
+document.addEventListener(onload, newGame());
+// replay.addEventListener('click', console.log('CLICKED IT'));
 
 
 let clickedCard = null;
@@ -42,22 +47,27 @@ function cardClicked(e) {
         //if a card HAS BEEN CLICKED check to see if next card matches
         //if card DOES match, prevent cards from being clicked/hidden again
         if (clickedCard.getAttribute('data-color') === target.getAttribute('data-color')) {
-            console.log('card ARE equal');
+            // console.log('card ARE equal');
             score++;
+            scoreBoard.innerHTML = `${score}`
             clickedCard = null;
-            if (score === 8) {
-                alert('YOU MATCHED EVERYTHING')
+            if (score === 8 || score === 16 || score === 24 || score === 32) {
+                alert('YOU MATCHED EVERYTHING, PLAY AGAIN?')
             }
+            if (score === 40) {
+                alert(`YOU WON 5 TIMES!, TAKE A BREAK`)
+            }
+
         }
         else {
             //if next card DOES NOT match, make both cards hidden again
-            console.log('cards are NOT equal')
+            // console.log('cards are NOT equal')
             setTimeout(() => {
                 clickedCard.className = clickedCard.className.replace('clicked', '').trim() + 'hiding';
                 target.className = target.className.replace('clicked', '').trim() + 'hiding';
                 clickedCard = null;
             }
-                , 600)
+                , 500)
         }
     }
 }

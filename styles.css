@@ -13,7 +13,7 @@ body{
 .scoreBoard{
     border: solid black 2px;
     height: 30px;
-    width: 100px;
+    /* width: 100px; */
     display: flex;
     justify-content: center;
 }
