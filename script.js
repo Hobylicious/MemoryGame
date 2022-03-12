@@ -1,3 +1,25 @@
+let score = 0;
+let scoreBoard = document.getElementsByClassName('.scoreBoard');
+const colors = ['green', 'blue', 'pink', 'purple', 'red', 'orange', 'black', 'teal']
+const cards = [...document.querySelectorAll('.card')];
+
+
+//color randomizer, help was acquired from friend currently working as fullstack dev
+for (let color of colors) {
+    const cardAIndex = parseInt(Math.random() * cards.length);
+    const cardA = cards[cardAIndex];
+    cards.splice(cardAIndex, 1);
+    cardA.className += `${color}`;
+    cardA.setAttribute('data-color', color);
+
+    const cardBIndex = parseInt(Math.random() * cards.length);
+    const cardB = cards[cardBIndex];
+    cards.splice(cardBIndex, 1);
+    cardB.className += `${color}`;
+    cardB.setAttribute('data-color', color);
+}
+
+
 let clickedCard = null;
 
 //card click = flip card/remove hidden
@@ -18,24 +40,25 @@ function cardClicked(e) {
     }
     else if (clickedCard) {
         //if a card HAS BEEN CLICKED check to see if next card matches
-        //if card matches, leave them showing
+        //if card DOES match, prevent cards from being clicked/hidden again
         if (clickedCard.getAttribute('data-color') === target.getAttribute('data-color')) {
-            console.log('card ARE equal')
+            console.log('card ARE equal');
+            score++;
             clickedCard = null;
+            if (score === 8) {
+                alert('YOU MATCHED EVERYTHING')
+            }
         }
         else {
-            //if they are NOT matching, flip them back
+            //if next card DOES NOT match, make both cards hidden again
             console.log('cards are NOT equal')
             setTimeout(() => {
                 clickedCard.className = clickedCard.className.replace('clicked', '').trim() + 'hiding';
                 target.className = target.className.replace('clicked', '').trim() + 'hiding';
                 clickedCard = null;
             }
-                , 1000)
+                , 600)
         }
     }
 }
 
-
-//if next card DOES NOT match, make both cards hidden again
-//if card DOES match, prevent cards from being clicked/hidden again
