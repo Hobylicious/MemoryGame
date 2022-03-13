@@ -1,12 +1,15 @@
-let replay = document.querySelectorAll('.newGame')
+const replay = document.getElementById('newGame')
 let score = 0;
 let scoreBoard = document.querySelector('.scoreBoard');
 const colors = ['green', 'blue', 'pink', 'purple', 'red', 'orange', 'black', 'teal']
-const cards = [...document.querySelectorAll('.card')];
+
+let clear = document.querySelectorAll('.card');
 
 
 //color randomizer, help was acquired from friend currently working as fullstack dev
 function newGame() {
+    const cards = [...document.querySelectorAll('.card')];
+    // console.log(cards)
     for (let color of colors) {
         const cardAIndex = parseInt(Math.random() * cards.length);
         const cardA = cards[cardAIndex];
@@ -20,9 +23,19 @@ function newGame() {
         cardB.className += `${color}`;
         cardB.setAttribute('data-color', color);
     };
+
 };
-document.addEventListener(onload, newGame());
-// replay.addEventListener('click', console.log('CLICKED IT'));
+document.addEventListener("onload", newGame());
+
+function clearBoard() {
+    clear.forEach((el) =>
+        el.className = "card hiding");
+    console.log(clear);
+};
+
+replay.addEventListener("click", function () { console.log('clicked'); clearBoard(); newGame() });
+// console.log(replay)
+
 
 
 let clickedCard = null;
@@ -49,7 +62,7 @@ function cardClicked(e) {
         if (clickedCard.getAttribute('data-color') === target.getAttribute('data-color')) {
             // console.log('card ARE equal');
             score++;
-            scoreBoard.innerHTML = `${score}`
+            scoreBoard.innerHTML = `${score}`;
             clickedCard = null;
             if (score === 8 || score === 16 || score === 24 || score === 32) {
                 alert('YOU MATCHED EVERYTHING, PLAY AGAIN?')
