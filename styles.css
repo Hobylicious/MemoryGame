@@ -39,6 +39,11 @@ h1{
     box-sizing: border-box;
 }
 
+.rules{
+    margin: 5px;
+    justify-content: center;
+}
+
 .green{
     background-color: green;
 }
@@ -65,4 +70,60 @@ h1{
 }
 .hiding{
     background-color: grey;
+}
+
+
+@media screen and (max-width: 900px) {
+    .scoreBoardContainer{
+        display: grid;
+        justify-content: center;
+        height: 55px;
+    }
+    .scoreBoard{
+        border: solid black 2px;
+        height: 15px;
+        width: 75px;
+        display: flex;
+        justify-content: center;
+        font-size: 15px;
+    }
+    .card {
+        display: inline-block;
+        background-color: grey;
+        height: 112.5px;
+        width: 112.5px;
+        cursor: pointer;
+    }
+    .scoreBoardContainer{
+        display: grid;
+        justify-content: center;
+        height: 110px;
+    }
+    .green{
+        background-color: green;
+    }
+    .purple{
+        background-color: purple;
+    }
+    .red{
+        background-color: red;
+    }
+    .blue{
+        background-color: blue;
+    }
+    .orange{
+        background-color: orange;
+    }
+    .black{
+        background-color: black;
+    }
+    .teal{
+        background-color: teal;
+    }
+    .pink{
+        background-color: pink;
+    }
+    .hiding{
+        background-color: grey;
+    }
 }
