@@ -38,10 +38,14 @@ h1{
     box-shadow: inset 0px 0px 0px 5px red;
     box-sizing: border-box;
 }
-
+.gridmaker{
+    display: inline-block;
+}
 .rules{
     margin: 5px;
     justify-content: center;
+    border: solid black 3px;
+    text-align: left;  
 }
 
 .green{
@@ -100,7 +104,7 @@ h1{
         height: 110px;
     }
     .green{
-        background-color: green;
+    background-color: green;
     }
     .purple{
         background-color: purple;
