@@ -1,4 +1,4 @@
-### Hoby's Memory-Game
+# Hoby's Memory-Game
 <p>This is a simple card/block matching game that anyone can play</p>
 <p>The game has 5 rounds of 8 points each, matching a pair of colors equals 1 point</p>
 
