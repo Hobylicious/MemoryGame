@@ -7,19 +7,19 @@
 ![screen shot of the game](.../../images/gameShot.png)
 
 
-Code/Technologies Used
+# Code/Technologies Used
 * .html
 * .css
 * .js
 
 
-Hurdles
-* Randomizing the color pattern was difficult task
+# Hurdles
+* Randomizing the color pattern was a more difficult task than ever anticipated
 
-Future Inclusions
+# Future Inclusions
 * larger game board (6x6, 8x8, etc..)
 * multi-player
 * images instead of colors
   
-Known Issue(s)/Bugs
+# Known Issue(s)/Bugs
 * If a user clicks a color/box after picking two colors that do not match, before they flip back to grey, the 3rd color/box can become stuck
